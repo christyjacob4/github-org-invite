@@ -47,6 +47,10 @@ export default {
   server: {
    host: '0.0.0.0' // default: localhost
   },
+  
+  http: {
+    host: '0.0.0.0'
+  },
 
   publicRuntimeConfig: {
     orgName: process.env.ORG_NAME,
