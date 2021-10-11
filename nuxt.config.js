@@ -48,11 +48,11 @@ export default {
    host: '0.0.0.0' // default: localhost
   },
   
-  // http: {
-  //   host: '0.0.0.0',
-  //   debug: true,
-  //   https: true
-  // },
+  http: {
+    // host: '0.0.0.0',
+    // debug: true,
+    https: true
+  },
 
   publicRuntimeConfig: {
     orgName: process.env.ORG_NAME,
