@@ -53,6 +53,7 @@ const addUserToOrg = async (username, org, team) => {
 
 app.use(function(req, res, next) {
   console.log("Got A Request at :", Date.now());
+  console.log(req)
   next();
 });
 
