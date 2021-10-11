@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { Octokit, App, Action } = require("octokit");
+const cors = require('cors')
+
 
 
 const GITHUB_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
@@ -13,6 +15,8 @@ const octokit = new Octokit({ auth: GITHUB_TOKEN });
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors())
+
 
 const userExists = async username => {
   try {
