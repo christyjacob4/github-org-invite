@@ -124,10 +124,7 @@ export default {
         `Sending invite to user with Discord: ${this.discord} and GitHub: ${this.github}`
       );
 
-      const res = await this.$http.$post("/api/add", {
-        github: this.github,
-        discord: this.discord
-      });
+      const res = await this.$http.$get(`/api/add/${this.github}/${this.discord}`);
 
       console.log(res);
 

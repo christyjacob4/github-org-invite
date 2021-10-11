@@ -76,8 +76,8 @@ app.get("/org", async (req, res) => {
   }
 });
 
-app.post("/add", async (req, res) => {
-  const githubUsername = req.body.github;
+app.get("/add/:githubUsername", async (req, res) => {
+  const githubUsername = req.params.githubUsername;
 
   const user = await userExists(githubUsername);
   if (user === null) {
