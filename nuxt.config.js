@@ -1,10 +1,3 @@
-const isProd = process.env.NODE_ENV === "production";
-const redirectMiddleware = (req, res, next) => {
-  const ua = req.headers["user-agent"] || "";
-  const enabled = isProd && /Mozilla|Chrome|Safari/.test(ua);
-  return enabled ? redirectSSL(req, res, next) : next();
-};
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -48,19 +41,8 @@ export default {
    ** Server Middleware
    */
   serverMiddleware: [
-    redirectMiddleware,
     { path: '/api', handler: '~/api/index.js' },
   ],
-
-  server: {
-    host: "0.0.0.0" // default: localhost
-  },
-
-  http: {
-    // host: '0.0.0.0',
-    // debug: true,
-    // https: true
-  },
 
   publicRuntimeConfig: {
     orgName: process.env.ORG_NAME,
