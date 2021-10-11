@@ -44,6 +44,10 @@ export default {
     "/api": "~/api"
   },
 
+  server: {
+   host: '0.0.0.0' // default: localhost
+  },
+
   publicRuntimeConfig: {
     orgName: process.env.ORG_NAME,
     enableDiscord: process.env.DISCORD_TOKEN ? 'true' : 'false'
