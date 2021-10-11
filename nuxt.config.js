@@ -49,7 +49,9 @@ export default {
   },
   
   http: {
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    debug: true,
+    https: true
   },
 
   publicRuntimeConfig: {
