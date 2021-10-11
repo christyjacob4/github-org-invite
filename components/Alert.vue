@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute top-4 right-4 p-4 rounded-md text-white shadow-2xl font-medium"
+    class="absolute top-4 right-4 p-4 rounded-lg text-white shadow-2xl font-medium max-w-sm w-full"
     :class="[error ? 'bg-red-500' : 'bg-green-500', show ? 'block' : 'hidden']"
   >
     {{ message }}

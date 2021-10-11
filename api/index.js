@@ -2,9 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { Octokit, App, Action } = require("octokit");
 
-const ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
+
+const GITHUB_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
+const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const ORG_NAME = process.env.ORG_NAME
-const octokit = new Octokit({ auth: ACCESS_TOKEN });
+const TEAM_NAME = process.env.TEAM_NAME
+const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
 // Create express instance
 const app = express();
@@ -29,7 +32,7 @@ const getTeam = async org => {
     const res = await octokit.rest.teams.list({
       org
     });
-    return res.data.find(val => val.name == "Contributors");
+    return res.data.find(val => val.name == TEAM_NAME);
   } catch (error) {
     return null;
   }
@@ -77,6 +80,7 @@ app.post("/add", async (req, res) => {
       error: true,
       message: "User not found. Check your Github Username"
     });
+    return;
   }
 
   const team = await getTeam(ORG_NAME);
@@ -85,19 +89,21 @@ app.post("/add", async (req, res) => {
       error: true,
       message: "Team not found"
     });
+    return;
   }
 
-  const status = await addUserToOrg(user.id, ORG_NAME, team != null ? team.id : "");
+  const status = await addUserToOrg(user.id, ORG_NAME, team !== null ? team.id : "");
   if (status === false) {
     res.json({
       error: true,
       message: "Unable to invite user to team"
     });
+    return;
   }
 
   res.json({
     error: false,
-    message: "Invite sent"
+    message: "Invite sent successfully!"
   });
 });
 

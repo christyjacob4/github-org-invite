@@ -8,10 +8,17 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors : {
+        'background': process.env.BACKGROUND_COLOR,
+        'accent': process.env.ACCENT_COLOR
+      }
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      brightness: ['hover'],
+    },
   },
   plugins: [
     require('@tailwindcss/forms')

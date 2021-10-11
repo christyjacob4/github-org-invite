@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Join Appwrite",
+    title: `Invitation to ${process.env.ORG_NAME}`,
     htmlAttrs: {
       lang: "en"
     },
@@ -45,7 +45,8 @@ export default {
   },
 
   publicRuntimeConfig: {
-    orgName: process.env.ORG_NAME
+    orgName: process.env.ORG_NAME,
+    enableDiscord: process.env.DISCORD_TOKEN ? 'true' : 'false'
   },
 
 };

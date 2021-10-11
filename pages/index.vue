@@ -1,8 +1,9 @@
 <template>
-  <div class="w-screen h-screen bg-pink-700 items-center justify-center flex">
+  <div class="w-screen h-screen bg-background items-center justify-center flex">
     <Alert :error="error" :message="message" :show="message ? true : false" />
 
     <form
+      @submit="sendInvite"
       class="
         flex flex-col
         bg-white
@@ -13,17 +14,19 @@
         space-y-8
         max-w-md
         text-lg
+        text-gray-700
       "
     >
       <img :src="orgAvatar" class="h-44 rounded-lg" alt="" />
 
       <p class="text-center">
-        You've been invited to join the <b class="capitalize">{{ $config.orgName }}</b> org
-        on GitHub! Drop in your username to receive your invite!
+        You've been invited to join the
+        <b class="capitalize">{{ $config.orgName }}</b> org on GitHub! Drop in
+        your username to receive your invite!
       </p>
 
-      <div class="flex flex-col space-y-4 w-full">
-        <label class="block text-md font-medium text-gray-700" for="discord"
+      <div v-if="$config.enableDiscord " class="flex flex-col space-y-4 w-full">
+        <label class="block text-md font-medium" for="discord"
           >Discord Username</label
         >
         <input
@@ -32,8 +35,8 @@
           required
           v-model="discord"
           class="
-            focus:ring-pink-500
-            focus:border-pink-500
+            focus:ring-accent
+            focus:border-accent
             block
             w-full
             rounded-md
@@ -47,7 +50,7 @@
       </div>
 
       <div class="flex flex-col space-y-4 w-full">
-        <label class="block text-md font-medium text-gray-700" for="github"
+        <label class="block text-md font-medium" for="github"
           >Github Username</label
         >
         <input
@@ -56,8 +59,8 @@
           required
           v-model="github"
           class="
-            focus:ring-pink-500
-            focus:border-pink-500
+            focus:ring-accent
+            focus:border-accent
             block
             w-full
             rounded-md
@@ -66,14 +69,13 @@
             py-3
             px-3
           "
-          placeholder="Enter your GtiHub username"
+          placeholder="Enter your GitHub username"
         />
       </div>
 
       <button
         type="submit"
-        @click="sendInvite"
-        class="bg-pink-600 rounded-md shadow-lg w-full py-4 text-white font-medium items-center flex justify-center space-x-3"
+        class="flex w-full py-4 text-white font-medium items-center justify-center space-x-3 rounded-md shadow-lg bg-accent filter hover:brightness-90"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -112,17 +114,23 @@ export default {
     };
   },
   mounted() {
-    console.log(this.org)
+    console.log(this.org);
   },
   methods: {
     async sendInvite(e) {
       e.preventDefault();
-      console.log(`Sending invite to ${this.discord} and ${this.github}`);
+
+      console.log(
+        `Sending invite to user with Discord: ${this.discord} and GitHub: ${this.github}`
+      );
+
       const res = await this.$http.$post("/api/add", {
         github: this.github,
         discord: this.discord
       });
+
       console.log(res);
+
       (this.error = res.error), (this.message = res.message);
     }
   }
