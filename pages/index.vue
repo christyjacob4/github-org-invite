@@ -25,7 +25,7 @@
         your username to receive your invite!
       </p>
 
-      <div v-if="$config.enableDiscord " class="flex flex-col space-y-4 w-full">
+      <div v-if="$config.enableDiscord" class="flex flex-col space-y-4 w-full">
         <label class="block text-md font-medium" for="discord"
           >Discord Username</label
         >
@@ -104,14 +104,13 @@ export default {
       discord: "",
       github: "",
       message: "",
-      error: false
+      error: false,
+      orgAvatar: ""
     };
   },
-  async asyncData({ params, error, $http }) {
-    const res = await $http.$get("/api/org");
-    return {
-      orgAvatar: res.url
-    };
+  async fetch() {
+    const res = await this.$http.$get("/api/org");
+    this.orgAvatar = res.url;
   },
   mounted() {
     console.log(this.org);
@@ -124,7 +123,10 @@ export default {
         `Sending invite to user with Discord: ${this.discord} and GitHub: ${this.github}`
       );
 
-      const res = await this.$http.$get(`/api/add/${this.github}/${this.discord}`);
+      const res = await this.$http.$post("/api/add", {
+        github: this.github,
+        discord: this.discord
+      });
 
       console.log(res);
 

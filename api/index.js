@@ -3,8 +3,6 @@ const bodyParser = require("body-parser");
 const { Octokit, App, Action } = require("octokit");
 const cors = require('cors')
 
-
-
 const GITHUB_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 const ORG_NAME = process.env.ORG_NAME
@@ -56,8 +54,8 @@ const addUserToOrg = async (username, org, team) => {
 };
 
 app.use(function(req, res, next) {
-  console.log("Got A Request at :", Date.now());
-  console.log(req)
+  console.log(` ${req.originalUrl}`)
+  console.log(process.env.NODE_ENV)
   next();
 });
 
@@ -76,8 +74,8 @@ app.get("/org", async (req, res) => {
   }
 });
 
-app.get("/add/:githubUsername", async (req, res) => {
-  const githubUsername = req.params.githubUsername;
+app.post("/add", async (req, res) => {
+  const githubUsername = req.body.github;
 
   const user = await userExists(githubUsername);
   if (user === null) {
