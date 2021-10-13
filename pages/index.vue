@@ -83,6 +83,7 @@
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          v-if="!loading"
         >
           <path
             stroke-linecap="round"
@@ -91,6 +92,23 @@
             d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"
           />
         </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 animate-spin"
+          v-else-if="loading"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+          />
+        </svg>
+
         <p>Send me an Invite!</p>
       </button>
     </form>
@@ -101,6 +119,7 @@
 export default {
   data() {
     return {
+      loading: false,
       discord: "",
       github: "",
       message: "",
@@ -118,7 +137,7 @@ export default {
   methods: {
     async sendInvite(e) {
       e.preventDefault();
-
+      this.loading = true;
       console.log(
         `Sending invite to user with Discord: ${this.discord} and GitHub: ${this.github}`
       );
@@ -128,9 +147,9 @@ export default {
         discord: this.discord
       });
 
-      console.log(res);
-
-      (this.error = res.error), (this.message = res.message);
+      this.loading = false;
+      this.error = res.error;
+      this.message = res.message;
     }
   }
 };
