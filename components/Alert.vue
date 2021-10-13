@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-white px-6 py-4 border-2 border-white rounded-md shadow-2xl absolute right-0 top-0 mt-10 mr-10"
+    class="text-white px-6 py-4 border-0 rounded-md shadow-2xl absolute right-0 top-0 mt-10 mr-10"
     :class="[isError ? 'bg-red-500' : 'bg-green-500']"
   >
     <span class="text-xl inline-block mr-5 align-middle">
