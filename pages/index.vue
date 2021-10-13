@@ -1,6 +1,6 @@
 <template>
   <div class="w-screen h-screen bg-background items-center justify-center flex">
-    <Alert :error="error" :message="message" :show="message ? true : false" />
+    <Alert v-if="alert.show" :message="alert.message" :isError="alert.error" />
 
     <form
       @submit="sendInvite"
@@ -116,28 +116,32 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   data() {
     return {
       loading: false,
       discord: "",
       github: "",
-      message: "",
-      error: false,
       orgAvatar: ""
     };
+  },
+  computed: {
+    alert() {
+      return this.$store.state.alert;
+    }
   },
   async fetch() {
     const res = await this.$http.$get("/api/org");
     this.orgAvatar = res.url;
   },
-  mounted() {
-    console.log(this.org);
-  },
   methods: {
+    ...mapMutations(["setAlert"]),
     async sendInvite(e) {
       e.preventDefault();
       this.loading = true;
+
       console.log(
         `Sending invite to user with Discord: ${this.discord} and GitHub: ${this.github}`
       );
@@ -147,9 +151,14 @@ export default {
         discord: this.discord
       });
 
+      console.log(res);
+
       this.loading = false;
-      this.error = res.error;
-      this.message = res.message;
+      this.setAlert({
+        show: true,
+        error: res.error,
+        message: res.message
+      });
     }
   }
 };

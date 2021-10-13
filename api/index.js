@@ -53,11 +53,11 @@ const addUserToOrg = async (username, org, team) => {
   return true;
 };
 
-app.use(function(req, res, next) {
-  console.log(` ${req.originalUrl}`)
-  console.log(process.env.NODE_ENV)
-  next();
-});
+// app.use(function(req, res, next) {
+//   console.log(` ${req.originalUrl}`)
+//   console.log(process.env.NODE_ENV)
+//   next();
+// });
 
 app.get("/org", async (req, res) => {
   try {

@@ -1,30 +1,45 @@
 <template>
   <div
-    class="absolute top-4 right-4 p-4 rounded-lg text-white shadow-2xl font-medium max-w-sm w-full"
-    :class="[error ? 'bg-red-500' : 'bg-green-500', show ? 'block' : 'hidden']"
+    class="text-white px-6 py-4 border-2 border-white rounded-md shadow-2xl absolute right-0 top-0 mt-10 mr-10"
+    :class="[isError ? 'bg-red-500' : 'bg-green-500']"
   >
-    {{ message }}
+    <span class="text-xl inline-block mr-5 align-middle">
+      <i class="fas fa-bell" />
+    </span>
+    <span class="inline-block align-middle font-semibold mr-8">
+      {{ message }}
+    </span>
+    <button
+      @click="dismissAlert"
+      class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none"
+    >
+      <span>×</span>
+    </button>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    show: Boolean,
-    error: Boolean,
-    message: String
-  },
-  //   data() {
-  //     return {
-  //       show: false
-  //     };
-  //   },
-  mounted() {
 
-    const callback = function() {
-        console.log("Execuiting timeout");
-        this.show = false
+<script>
+import { mapMutations } from "vuex";
+
+export default {
+  props: ["message", "isError"],
+  data() {
+    return {
+      timeout: null
+    };
+  },
+  methods: {
+    ...mapMutations(["setAlert"]),
+    dismissAlert() {
+      this.setAlert({ show: false });
+      this.timeout && clearTimeout(this.timeout);
     }
-    setTimeout(callback, 3000);
+  },
+  created() {
+    this.timeout = setTimeout(() => this.setAlert({ show: false }), 4000);
+  },
+  beforeUnmount() {
+    clearTimeout(this.timeout);
   }
 };
 </script>
