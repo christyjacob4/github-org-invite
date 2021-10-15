@@ -1,37 +1,39 @@
 {
-    "name": "Github Org Invite",
-    "description": "Send automatic invites to GitHub Organizations (and teams)!",
-    "repository": "https://github.com/christyjacob4/github-org-invite",
-    "logo": "https://avatars.githubusercontent.com/u/20852629?v=4&s=400",
-    "keywords": ["github", "automation", "github organization", "team", "invite"],
-    "env": {
-      "GITHUB_ACCESS_TOKEN": {
-        "description": "A Github access token to activate the Octokit Github Client",
-        "value": null
-      },
-      "ORG_NAME": {
-        "description": "You can confirm it by going to your org's dashboard. The URL will be: \"https://github.com/orgs/{ORGANIZATION_NAME}/dashboard\"",
-        "value": null
-      },
-      "TEAM_NAME": {
-        "description": "(OPTIONAL) Set default team to join. You can confirm it by going to your team's page. The URL will be: \"https://github.com/orgs/{ORGANIZATION_NAME}/teams/{TEAM_NAME}\"",
-        "value": "",
-        "required": false
-      },
-      "BACKGROUND_COLOR": {
-        "description": "Background color for front page. Can be one of [grey, white, blue, green, red, pink]. Default is white.",
-        "value":  "",
-        "required": false
-      },
-      "ACCENT_COLOR": {
-        "description": "Background color for front page. Can be one of [grey, white, blue, green, red, pink]. Default is white.",
-        "value":  "",
-        "required": false
-      },
-      "BASE_URL": {
-        "description": "Background color for front page. Can be one of [grey, white, blue, green, red, pink]. Default is white.",
-        "value":  "",
-        "required": false
-      }
+  "name": "Github Org Invite",
+  "description": "A simple Nuxt app to send automatic invites to GitHub Organizations (and teams)!",
+  "repository": "https://github.com/christyjacob4/github-org-invite",
+  "logo": "https://avatars.githubusercontent.com/u/20852629?v=4&s=400",
+  "keywords": ["github", "automation", "github organization", "team", "invite"],
+  "env": {
+    "GITHUB_ACCESS_TOKEN": {
+      "description": "[REQUIRED] A Github access token to activate the Octokit GitHub Client",
+      "value": "",
+      "required": true
+    },
+    "ORG_NAME": {
+      "description": "[REQUIRED] The organization to which you would like to invite users. The URL would looks like : \"https://github.com/orgs/{ORG_NAME}/dashboard\"",
+      "value": "",
+      "required": true
+    },
+    "BASE_URL": {
+      "description": "[REQUIRED] The URL at which your web app is hosted. Eg: \"https://invite-to-org.herokuapp.com\"",
+      "value": "",
+      "required": true
+    },
+    "TEAM_NAME": {
+      "description": "[OPTIONAL] Set default team to join. You can confirm it by going to your team's page at \"https://github.com/orgs/{ORG_NAME}/teams/{TEAM_NAME}\"",
+      "value": "",
+      "required": false
+    },
+    "BACKGROUND_COLOR": {
+      "description": "[OPTIONAL] Background color for front page. Can be any hex color code. Default is #14274E",
+      "value": "",
+      "required": false
+    },
+    "ACCENT_COLOR": {
+      "description": "[OPTIONAL] Accent color for the Landing page. Can be any hex color code. Default is #394867",
+      "value": "",
+      "required": false
     }
   }
+}
