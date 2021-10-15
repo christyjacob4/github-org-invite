@@ -19,11 +19,7 @@
 
 ## 💫 Get Started
 
-Getting started is extremely easy with the **One Click Deploy to Heroku** Button. You can simply click it and follow the on screen instructions.
-
-### Environment Variables
-
-You can configure the project with these handy environment variables.
+Getting started is extremely easy with the **One Click Deploy to Heroku** Button. You can simply click it and follow the on screen instructions. You can also customize the project with these handy environment variables.
 
 | Name                | Description                                                         | Required |
 | ------------------- | ------------------------------------------------------------------- | -------- |
