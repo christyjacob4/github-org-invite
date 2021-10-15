@@ -9,29 +9,41 @@
 ### A simple web app to easily **invite users to your GitHub Organization**! Built with **Nuxt + Talwind + ❤️**
 
 ## 🎯 Features
-* Customizable **Background** and **Accent** Colors
-* Optionally invite users to **teams**
-* **One Click deploy** to Heroku
-* **Lightweight** and **fast ⚡️**
-* **Nuxt + Tailwind**  
-* [WIP] **Discord** org validation 
 
-## 💫 Get Started 
+- Customizable **Background** and **Accent** Colors
+- Optionally invite users to **teams**
+- **One Click deploy** to Heroku
+- **Lightweight** and **fast ⚡️**
+- **Nuxt + Tailwind**
+- [WIP] **Discord** org validation
 
-Getting started is extremely easy with 
+## 💫 Get Started
 
+Getting started is extremely easy with the **One Click Deploy to Heroku** Button. You can simply click it and follow the on screen instructions.
 
+### Environment Variables
+
+You can configure the project with these handy environment variables.
+
+|        Name         |                             Description                             | Required |
+| :-----------------: | :-----------------------------------------------------------------: | :------: |
+| GITHUB_ACCESS_TOKEN |                      Your GitHub Access Token                       |   Yes    |
+|      ORG_NAME       |            The organization you wish to invite users to             |   Yes    |
+|      BASE_URL       | The URL of your hosted app. Eg: https://invite-to-org.herokuapp.com |   Yes    |
+|      TEAM_NAME      |    The team in the organization that you wish to invite users to    |    No    |
+|  BACKGROUND_COLOR   |                The Background color you wish to use                 |    No    |
+|    ACCENT_COLOR     |                  The Accent color you wish to use                   |    No    |
 
 If you wish to run this project on your own servers, you can use the following commands.
 
 ```sh
 $ npm run build
-$ npm start 
+$ npm start
 ```
 
 ## 🧑‍💻 Development
 
-This project is built with **Nuxt SSR**. All the API calls to the GitHub API are made on the server side and all sensitive information is stored on the Server Side as env variables. 
+This project is built with **Nuxt SSR**. All the API calls to the GitHub API are made on the server side and all sensitive information is stored on the Server Side as env variables.
 
 To run this project locally, you can follow these simple steps
 
@@ -44,22 +56,11 @@ $ cp .env.example .env
 Fill in the values in the `.env` file.
 
 ```sh
-# [ REQUIRED ] Your GitHub Access Token
 GITHUB_ACCESS_TOKEN=
-
-# [ REQUIRED ] The organization you wish to invite users to
 ORG_NAME=
-
-# [ OPTIONAL ] The URL of your hosted app. Eg: https://invite-to-org.herokuapp.com
 BASE_URL=
-
-# [OPTIONAL] The team in the organization that you wish to invite users to
-TEAM_NAME=   
-
-# [ OPTIONAL ] The Background color you wish to use.
-BACKGROUND_COLOR= 
-
-# [ OPTIONAL ] The Accent color you wish to use
+TEAM_NAME=
+BACKGROUND_COLOR=
 ACCENT_COLOR=
 ```
 
@@ -71,4 +72,5 @@ $ npm run dev
 ```
 
 ## 🤝 Credits
-Special thanks to [*thundergolfer*](https://github.com/thundergolfer/automated-github-organization-invites) for setting the foundation for this project.
+
+Special thanks to [_thundergolfer_](https://github.com/thundergolfer/automated-github-organization-invites) for setting the foundation for this project.
