@@ -25,14 +25,14 @@ Getting started is extremely easy with the **One Click Deploy to Heroku** Button
 
 You can configure the project with these handy environment variables.
 
-|        Name         |                             Description                             | Required |
-| :-----------------: | :-----------------------------------------------------------------: | :------: |
-| GITHUB_ACCESS_TOKEN |                      Your GitHub Access Token                       |   Yes    |
-|      ORG_NAME       |            The organization you wish to invite users to             |   Yes    |
-|      BASE_URL       | The URL of your hosted app. Eg: https://invite-to-org.herokuapp.com |   Yes    |
-|      TEAM_NAME      |    The team in the organization that you wish to invite users to    |    No    |
-|  BACKGROUND_COLOR   |                The Background color you wish to use                 |    No    |
-|    ACCENT_COLOR     |                  The Accent color you wish to use                   |    No    |
+| Name                | Description                                                         | Required |
+| ------------------- | ------------------------------------------------------------------- | -------- |
+| GITHUB_ACCESS_TOKEN | Your GitHub Access Token                                            | Yes      |
+| ORG_NAME            | The organization you wish to invite users to                        | Yes      |
+| BASE_URL            | The URL of your hosted app. Eg: https://invite-to-org.herokuapp.com | Yes      |
+| TEAM_NAME           | The team in the organization that you wish to invite users to       | No       |
+| BACKGROUND_COLOR    | The Background color you wish to use                                | No       |
+| ACCENT_COLOR        | The Accent color you wish to use                                    | No       |
 
 If you wish to run this project on your own servers, you can use the following commands.
 
