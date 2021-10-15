@@ -18,6 +18,16 @@
 
 ## 💫 Get Started 
 
+Getting started is extremely easy with 
+
+
+
+If you wish to run this project on your own servers, you can use the following commands.
+
+```sh
+$ npm run build
+$ npm start 
+```
 
 ## 🧑‍💻 Development
 
