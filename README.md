@@ -39,10 +39,9 @@ $ npm start
 
 ## 🧑‍💻 Development
 
-This project is built with **Nuxt SSR**. All the API calls to the GitHub API are made on the server side and all sensitive information is stored on the Server Side as env variables.
+This project is built with **Nuxt SSR**. All the API calls to the GitHub API are made on the server side and all sensitive information is stored on the server side as env variables. You can find the server side code in the `/api` folder.
 
 To run this project locally, you can follow these simple steps
-
 ```sh
 $ git clone git@github.com:christyjacob4/github-org-invite.git
 $ cd github-org-invite
