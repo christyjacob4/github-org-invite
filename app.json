@@ -11,7 +11,7 @@
       "required": true
     },
     "ORG_NAME": {
-      "description": "[REQUIRED] The organization to which you would like to invite users. The URL would looks like : \"https://github.com/orgs/{ORG_NAME}/dashboard\"",
+      "description": "[REQUIRED] The organization to which you would like to invite users. Yon can confirm it by going to your org's dashboard : \"https://github.com/orgs/{ORG_NAME}/dashboard\"",
       "value": "",
       "required": true
     },
