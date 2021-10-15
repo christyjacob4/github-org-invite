@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors : {
-        'background': process.env.BACKGROUND_COLOR ?? '',
-        'accent': process.env.ACCENT_COLOR
+        'background': process.env.BACKGROUND_COLOR || '#14274E',
+        'accent': process.env.ACCENT_COLOR || '#394867'
       }
     },
   },
