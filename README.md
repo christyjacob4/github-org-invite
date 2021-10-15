@@ -1,7 +1,13 @@
-# GitHub Org Invite
-![UI](readme-image.png)
+# 👨‍🚀 GitHub Org Invite
 
-A simple web app to easily invite users to your GitHub Organization! Built with Nuxt + Talwind
+![NuxtJS](https://img.shields.io/badge/nuxt.js-00C58E?style=for-the-badge&logo=nuxtdotjs&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+<p align="center">
+  <img src="readme-image.png"/>
+</p>
+
+
+### A simple web app to easily **invite users to your GitHub Organization**! Built with **Nuxt + Talwind + ❤️**
 
 ## 🎯 Features
 * Lightweight
@@ -9,11 +15,10 @@ A simple web app to easily invite users to your GitHub Organization! Built with 
 * Customizable Background and Accent Colors
 * [WIP] Discord validation 
 
+## 💫 Get Started 
 
-## Get Started 
 
-
-## Development
+## 🧑‍💻 Development
 
 This project is built with **Nuxt SSR**. All the API calls to the GitHub API are made on the server side and all sensitive information is stored on the Server Side as env variables. 
 
