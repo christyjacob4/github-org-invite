@@ -6,14 +6,15 @@
   <img src="readme-image.png"/>
 </p>
 
-
 ### A simple web app to easily **invite users to your GitHub Organization**! Built with **Nuxt + Talwind + ❤️**
 
 ## 🎯 Features
-* Lightweight
-* One Click deploy to Heroku
-* Customizable Background and Accent Colors
-* [WIP] Discord validation 
+* Customizable **Background** and **Accent** Colors
+* Optionally invite users to **teams**
+* **One Click deploy** to Heroku
+* Lightweight and fast ⚡️
+* Nuxt + Tailwind  
+* [WIP] Discord org validation 
 
 ## 💫 Get Started 
 
