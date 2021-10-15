@@ -12,9 +12,9 @@
 * Customizable **Background** and **Accent** Colors
 * Optionally invite users to **teams**
 * **One Click deploy** to Heroku
-* Lightweight and fast ⚡️
-* Nuxt + Tailwind  
-* [WIP] Discord org validation 
+* **Lightweight** and **fast ⚡️**
+* **Nuxt + Tailwind**  
+* [WIP] **Discord** org validation 
 
 ## 💫 Get Started 
 
