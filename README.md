@@ -1,4 +1,4 @@
-# 👨‍🚀 GitHub Org Invite
+# 📧 GitHub Organization Invite
 
 ![NuxtJS](https://img.shields.io/badge/nuxt.js-00C58E?style=for-the-badge&logo=nuxtdotjs&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
