@@ -23,5 +23,8 @@
     "tailwindcss": "^2.2.16",
     "autoprefixer": "^10.3.7",
     "postcss": "^8.3.9"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
