@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: `Invitation to ${process.env.ORG_NAME}`,
+    title: `Invitation to ${process.env.ORG_NAME ? (process.env.ORG_NAME[0].toUpperCase() + process.env.ORG_NAME.slice(1)) : 'Nuxt.js'}`,
     htmlAttrs: {
       lang: "en"
     },
@@ -11,7 +11,7 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: `${process.env.FAVICON_URL ?? "/favicon.ico"}` }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -38,7 +38,7 @@ export default {
   ],
 
   http: {
-    browserBaseURL : process.env.NODE_ENV === "production" ? process.env.BASE_URL : `http://localhost:3000`,
+    browserBaseURL: process.env.NODE_ENV === "production" ? process.env.BASE_URL : `http://localhost:3000`,
   },
 
   /*

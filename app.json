@@ -34,6 +34,11 @@
       "description": "[OPTIONAL] Accent color for the Landing page. Can be any hex color code. Default is #394867",
       "value": "",
       "required": false
+    },
+    "FAVICON_URL": {
+      "description": "[OPTIONAL] URL to your org's favicon. Default is the Nuxt favicon",
+      "value": "",
+      "required": false
     }
   }
 }
