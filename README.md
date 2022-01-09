@@ -31,6 +31,7 @@ Getting started is extremely easy with the **Deploy to Heroku** Button. You can 
 | TEAM_NAME           | The team in the organization that you wish to invite users to       | No       |
 | BACKGROUND_COLOR    | The Background color you wish to use                                | No       |
 | ACCENT_COLOR        | The Accent color you wish to use                                    | No       |
+| FAVICON_URL         | URL to your favicon                                                 | No       |
 
 If you wish to run this project on your own servers, you can use the following commands.
 
@@ -59,6 +60,7 @@ BASE_URL=
 TEAM_NAME=
 BACKGROUND_COLOR=
 ACCENT_COLOR=
+FAVICON_URL=
 ```
 
 Once these values have been filled, you can run and visit [http://localhost:3000](http://localhost:3000)
